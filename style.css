@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #35424a;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #35424a;
+    color: white;
+}
+
+@font-face {
+    font-family: 'MaPolice';
+    src: url('fonts/MaPolice.woff2') format('woff2');
+    font-display: swap;
+}
+/* Exemple : Style pour une image responsive */
+img {
+    max-width: 100%;  /* L'image ne dépasse pas de son conteneur */
+    height: auto;     /* Conserve les proportions */
+    display: block;    /* Évite les espaces indésirables */
+}
+
+/* Exemple : Image de fond */
+.hero-banner {
+    background-image: url("images/background.jpg");
+    background-size: cover;    /* Remplit tout l'espace */
+    background-position: center;
+    height: 400px;
+    width: 100%;
+}
+
+/* Exemple : Effet hover sur une image */
+.image-hover {
+    transition: transform 0.3s ease;
+}
+.image-hover:hover {
+    transform: scale(1.05);  /* Zoom léger au survol */
+}
+
+
+
+
