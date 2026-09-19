@@ -22,10 +22,11 @@
             NIX_NO_SELF_RPATH = true;
             shellHook = ''
               sudo gem install neocities
+              gem install neocities
               bundle init
               echo "gem 'neocities'" >> Gemfile
               bundle install
-              bundle exec neocities login
+              bundle exec neocities
             '';
           };
         });
