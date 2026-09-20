@@ -1,52 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reksa.io - Mon Site</title>
+    <title>Reksa.io - Landing Page Dynamique</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts (optionnel si vous utilisez des polices locales) -->
-    <!--link rel="preconnect" href="https://fonts.googleapis.com">
-    <!--link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!--link rel="preload" href="fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-<!-- Exemple : Logo -->
+    <div class="phone-feeds">
+        <!-- 7 colonnes -->
+        <div class="feed-column" id="column-1"></div>
+        <div class="feed-column" id="column-2"></div>
+        <div class="feed-column" id="column-3"></div>
+        <div class="feed-column central" id="column-4"></div>
+        <div class="feed-column" id="column-5"></div>
+        <div class="feed-column" id="column-6"></div>
+        <div class="feed-column" id="column-7"></div>
+    </div>
 
-<img src="images/logo.png" alt="Logo Reksa" width="200">
-
-<!-- Exemple : Image de fond (via CSS) -->
-<div class="hero-banner"></div>
-
-<script src="https://itch.io/bundle.js"></script>
-
-<!-- Exemple : Icône (SVG) -->
-<img src="images/icones/logo1.svg" alt="GitHub" width="30">
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="#">À propos</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <a
-              href="https://reksadsp.itch.io/rekdek"
-              class="itch-button"
-              style="background: #1a1a1a; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
-              Acheter Mon Jeu (0€)
-            </a>
-            <h1>Bienvenue sur mon site</h1>
-            <p>Un site moderne avec des images et des polices personnalisées.</p>
-        </section>
-    </main>
-    <footer>
-        <p>© 2026 Reksa.io</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
-

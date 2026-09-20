@@ -1,65 +1,111 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* Réinitialisation et base */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #121212; /* Fond sombre pour contraster avec les colonnes blanches */
+    overflow: hidden; /* Désactive le scroll */
+    height: 100vh;
+    width: 100vw;
     color: #333;
 }
 
-header {
-    background: #35424a;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #35424a;
-    color: white;
-}
-
-@font-face {
-    font-family: 'MaPolice';
-    src: url('fonts/MaPolice.woff2') format('woff2');
-    font-display: swap;
-}
-/* Exemple : Style pour une image responsive */
-img {
-    max-width: 100%;  /* L'image ne dépasse pas de son conteneur */
-    height: auto;     /* Conserve les proportions */
-    display: block;    /* Évite les espaces indésirables */
-}
-
-/* Exemple : Image de fond */
-.hero-banner {
-    background-image: url("images/background.jpg");
-    background-size: cover;    /* Remplit tout l'espace */
-    background-position: center;
-    height: 400px;
+/* Conteneur principal des colonnes */
+.phone-feeds {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     width: 100%;
+    perspective: 1000px; /* Effet 3D pour les ombres */
 }
 
-/* Exemple : Effet hover sur une image */
-.image-hover {
+/* Style des colonnes */
+.feed-column {
+    width: 200px;
+    height: 80vh;
+    background: white;
+    margin: 0 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden; /* Cache les blocs qui sortent */
+}
+
+/* Colonne centrale ( plus large et superposée) */
+.feed-column.central {
+    width: 250px;
+    height: 90vh;
+    z-index: 10;
+    margin: 0 -15px; /* Décalage pour chevaucher les colonnes adjacentes */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Positionnement des colonnes pour l'effet de superposition */
+#column-1 { transform: translateX(-50px) translateY(20px); z-index: 1; }
+#column-2 { transform: translateX(-25px) translateY(10px); z-index: 2; }
+#column-3 { transform: translateX(-10px) translateY(5px); z-index: 3; }
+#column-4 { z-index: 10; } /* Centrale */
+#column-5 { transform: translateX(10px) translateY(5px); z-index: 3; }
+#column-6 { transform: translateX(25px) translateY(10px); z-index: 2; }
+#column-7 { transform: translateX(50px) translateY(20px); z-index: 1; }
+
+/* Style des blocs qui défilent */
+.feed-block {
+    width: calc(100% - 20px); /* 10px de padding de chaque côté */
+    height: 200px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    margin: 15px 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    text-align: center;
 }
-.image-hover:hover {
-    transform: scale(1.05);  /* Zoom léger au survol */
+
+/* Effet hover sur les blocs */
+.feed-block:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* Style du texte dans les blocs */
+.feed-block h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #222;
+}
 
+.feed-block p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
 
+/* Style des images dans les blocs */
+.feed-block img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
 
+/* Animation de défilement */
+@keyframes scrollUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+}
