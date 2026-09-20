@@ -1,0 +1,13 @@
+{
+  "name": "reksa-dsp-instruments",
+  "version": "1.0.0",
+  "description": "Landing page dynamique Reksa.io",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.20.0",
+    "express": "^5.2.1"
+  }
+}

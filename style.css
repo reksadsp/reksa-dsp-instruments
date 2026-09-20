@@ -104,8 +104,8 @@ body {
     margin-bottom: 10px;
 }
 
-/* Animation de défilement */
+/* Animation de défilement (top en % = hauteur de la colonne, pas du bloc) */
 @keyframes scrollUp {
-    0% { transform: translateY(100%); }
-    100% { transform: translateY(-100%); }
+    0% { top: 100%; }
+    100% { top: -100%; }
 }
