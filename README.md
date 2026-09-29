@@ -1,33 +1,33 @@
-# Vibe-Coding Your Own Portfolio Website
+# Vibe-coder votre propre site portfolio
 
-This is a personal portfolio website, built and published with:
+Ceci est un site portfolio personnel, construit et publié avec :
 
-- **Nix** — gives you a working Ruby setup with one command, no manual installs
-- **Ruby + the Neocities CLI** — pushes your website to [Neocities](https://neocities.org)
-- **GitHub Copilot** — an AI coding assistant that writes and edits the code for you
+- **Nix** — vous donne un environnement Ruby fonctionnel en une seule commande, sans installation manuelle
+- **Ruby + le CLI Neocities** — envoie votre site web sur [Neocities](https://neocities.org)
+- **GitHub Copilot** — un assistant IA qui écrit et modifie le code pour vous
 
-You do **not** need to know how to program. If you can copy-paste commands and chat with an AI, you can do this.
-
----
-
-## What you end up with
-
-A live website at `https://YOURNAME.neocities.org` that you can update anytime by typing one command.
+Vous n'avez **pas** besoin de savoir programmer. Si vous savez copier-coller des commandes et discuter avec une IA, vous pouvez y arriver.
 
 ---
 
-## Step 0: Install Nix (one time)
+## Ce que vous obtiendrez
 
-Nix installs everything else for you, so you never fight with "it doesn't work on my computer" problems.
+Un site en ligne à l'adresse `https://VOTRENOM.neocities.org`, que vous pouvez mettre à jour à tout moment en tapant une seule commande.
 
-1. Open a terminal (on Windows, use the **WSL** Linux terminal or a Mac/Linux terminal).
-2. Paste this and press Enter:
+---
+
+## Étape 0 : installer Nix (une seule fois)
+
+Nix installe tout le reste pour vous, donc vous ne rencontrerez jamais les problèmes du style « ça ne marche pas sur mon ordinateur ».
+
+1. Ouvrez un terminal (sur Windows, utilisez le terminal Linux **WSL**, ou un terminal Mac/Linux).
+2. Collez ceci et appuyez sur Entrée :
 
    ```bash
    sh <(curl -L https://nixos.org/nix/install) && . ~/.profile
    ```
 
-3. If that prints errors about "flakes", enable them by adding this line to your `~/.config/nix/nix.conf` file (create it if it doesn't exist):
+3. Si une erreur parle de « flakes », activez-les en ajoutant cette ligne dans le fichier `~/.config/nix/nix.conf` (créez-le s'il n'existe pas) :
 
    ```text
    experimental-features = nix-command flakes
@@ -35,111 +35,111 @@ Nix installs everything else for you, so you never fight with "it doesn't work o
 
 ---
 
-## Step 1: Get this project onto your computer
+## Étape 1 : récupérer ce projet sur votre ordinateur
 
 ```bash
 git clone https://github.com/reksadsp/reksa-dsp-instruments.git
 cd reksa-dsp-instruments
 ```
 
-(Or use GitHub Desktop's **File → Clone repository** if you prefer clicking.)
+(Vous pouvez aussi utiliser GitHub Desktop : **File → Clone repository**, si vous préférez cliquer.)
 
 ---
 
-## Step 2: Enter the Nix development environment
+## Étape 2 : entrer dans l'environnement de développement Nix
 
-Everything you need (Ruby, OpenSSL, the Neocities gem) is declared in the `flake.nix` file. One command sets it all up:
+Tout ce dont vous avez besoin (Ruby, OpenSSL, le gem Neocities) est déclaré dans le fichier `flake.nix`. Une seule commande installe tout :
 
 ```bash
 nix develop
 ```
 
-The first run downloads Ruby and takes a few minutes. When you see the shell prompt change, you're inside the environment — Ruby is installed and ready, **only inside this terminal**. (If you close the terminal, just run `nix develop` again.)
+Le premier lancement télécharge Ruby et prend quelques minutes. Quand l'invite de commande change, vous êtes dans l'environnement — Ruby est installé et prêt, **uniquement dans ce terminal**. (Si vous fermez le terminal, relancez simplement `nix develop`.)
 
-The shell automatically runs the setup for the Neocities tool:
+Le shell exécute automatiquement la configuration de l'outil Neocities :
 
-- `gem install neocities` — installs the Neocities command-line tool
-- `bundle install` — wires it up with your project's `Gemfile`
-
----
-
-## Step 3: Get a GitHub Copilot setup
-
-GitHub Copilot is the AI that writes the actual website code for you.
-
-1. Sign up for GitHub if you haven't, and start a [Copilot subscription](https://github.com/features/copilot) (there is a free tier).
-2. Install **VS Code** (a free code editor) and sign in with your GitHub account — Copilot activates automatically.
-3. In VS Code, open your project folder (**File → Open Folder**), and open the Copilot Chat panel.
-4. Now just talk to it in plain English, for example:
-
-   > "Make my index.html a portfolio page with my name, a short bio, and links to my projects. Use style.css and script.js."
-
-   Copilot writes the code; you click **Accept**. That's the vibe-coding part.
+- `gem install neocities` — installe l'outil en ligne de commande Neocities
+- `bundle install` — l'associe au `Gemfile` de votre projet
 
 ---
 
-## Step 4: Create a Neocities account
+## Étape 3 : configurer GitHub Copilot
 
-1. Go to [neocities.org](https://neocities.org) and create a free account. Your username becomes your web address: `https://USERNAME.neocities.org`.
-2. After logging in, open **Settings → API key** and copy the key.
+GitHub Copilot est l'IA qui écrit le code du site web pour vous.
+
+1. Créez un compte GitHub si ce n'est pas déjà fait, et souscrivez à [Copilot](https://github.com/features/copilot) (il existe une offre gratuite).
+2. Installez **VS Code** (un éditeur de code gratuit) et connectez-vous avec votre compte GitHub — Copilot s'active automatiquement.
+3. Dans VS Code, ouvrez le dossier du projet (**File → Open Folder**), puis ouvrez le panneau Copilot Chat.
+4. Ensuite, parlez-lui simplement en français courant, par exemple :
+
+   > « Fais de mon index.html une page portfolio avec mon nom, une courte bio et des liens vers mes projets. Utilise style.css et script.js. »
+
+   Copilot écrit le code ; vous cliquez sur **Accept**. C'est ça, le vibe-coding.
 
 ---
 
-## Step 5: Publish your site
+## Étape 4 : créer un compte Neocities
 
-Inside your `nix develop` terminal, run:
+1. Allez sur [neocities.org](https://neocities.org) et créez un compte gratuit. Votre nom d'utilisateur devient votre adresse web : `https://UTILISATEUR.neocities.org`.
+2. Une fois connecté, ouvrez **Settings → API key** et copiez la clé.
+
+---
+
+## Étape 5 : publier votre site
+
+Dans votre terminal `nix develop`, lancez :
 
 ```bash
 neocities login
 ```
 
-- Enter your username.
-- When it asks for a password, paste the **API key** you copied (it's the "password" for the command-line tool).
+- Entrez votre nom d'utilisateur.
+- Quand un mot de passe est demandé, collez la **clé API** copiée (c'est le « mot de passe » de l'outil en ligne de commande).
 
-Then push your website to the internet:
+Puis envoyez votre site sur internet :
 
 ```bash
 neocities push .
 ```
 
-A few seconds later, visit `https://USERNAME.neocities.org` — your site is live. 🎉
+Quelques secondes plus tard, visitez `https://UTILISATEUR.neocities.org` — votre site est en ligne. 🎉
 
-Any time you change your files (or Copilot does), just run `neocities push .` again to update the live site.
+Chaque fois que vous modifiez vos fichiers (ou que Copilot le fait), relancez simplement `neocities push .` pour mettre à jour le site en ligne.
 
 ---
 
-## How the files fit together
+## Comment les fichiers s'articulent
 
-| File | What it is |
+| Fichier | Ce que c'est |
 |---|---|
-| `index.html` | Your homepage — the page visitors see |
-| `style.css` | Colors, fonts, and layout |
-| `script.js` | Interactive behavior (menus, animations) |
-| `images/` | Your pictures and artwork |
-| `flake.nix` | Tells Nix exactly which tools to install (Ruby, etc.) |
-| `Gemfile` | Tells Ruby's bundler which gems the project needs (the `neocities` gem) |
+| `index.html` | Votre page d'accueil — la page que les visiteurs voient |
+| `style.css` | Couleurs, polices et mise en page |
+| `script.js` | Comportements interactifs (menus, animations) |
+| `images/` | Vos images et illustrations |
+| `flake.nix` | Indique à Nix exactement quels outils installer (Ruby, etc.) |
+| `Gemfile` | Indique au bundler de Ruby quels gems le projet nécessite (le gem `neocities`) |
 
-You only ever need to touch the first four — and Copilot can do that for you.
-
----
-
-## Troubleshooting
-
-- **`nix: command not found`** — close and reopen your terminal, or run `. ~/.profile`.
-- **`error: experimental Nix feature 'flakes' is disabled`** — do Step 0 part 3 (add `experimental-features = nix-command flakes`).
-- **`neocities: command not found`** — make sure you ran `nix develop` in this terminal first.
-- **Login keeps failing** — you must paste the **API key** from Neocities settings, not your account password.
-- **`sudo` prompts when entering the shell** — the setup script tries `sudo gem install neocities` first; the plain `gem install` fallback covers you, so you can just cancel the sudo prompt.
-- **Want to reset everything and start fresh** — delete the folder and clone again; Nix keeps your system clean.
+Vous n'avez jamais besoin de toucher qu'aux quatre premiers — et Copilot peut le faire pour vous.
 
 ---
 
-## The whole workflow, day to day
+## Dépannage
+
+- **`nix: command not found`** — fermez et rouvrez votre terminal, ou lancez `. ~/.profile`.
+- **`error: experimental Nix feature 'flakes' is disabled`** — faites la partie 3 de l'étape 0 (ajoutez `experimental-features = nix-command flakes`).
+- **`neocities: command not found`** — vérifiez que vous avez d'abord lancé `nix develop` dans ce terminal.
+- **La connexion échoue sans cesse** — vous devez coller la **clé API** des paramètres Neocities, pas le mot de passe de votre compte.
+- **`sudo` demande un mot de passe à l'entrée du shell** — le script de configuration essaie d'abord `sudo gem install neocities` ; le fallback `gem install` suffit, donc vous pouvez simplement annuler l'invite sudo.
+- **Tout recommencer à zéro** — supprimez le dossier et clonez-le à nouveau ; Nix garde votre système propre.
+
+---
+
+## Le flux de travail au quotidien
 
 ```bash
-nix develop          # get your tools
-# chat with Copilot, edit files in VS Code
-neocities push .     # publish
+nix develop          # récupérer vos outils
+# discuter avec Copilot, modifier les fichiers dans VS Code
+neocities push .     # publier
 ```
 
-That's it. Happy vibe-coding!
+C'est tout. Bon vibe-coding !
