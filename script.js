@@ -1,13 +1,8 @@
 // Liste d'exemples de contenus pour les blocs (images + texte)
 const blockContents = [
-    { title: "Projet Alpha", desc: "Un jeu expérimental en HTML5.", img: "https://via.placeholder.com/200x200/ff6b6b/ffffff?text=Alpha" },
-    { title: "Artwork 1", desc: "Illustration digitale.", img: "https://via.placeholder.com/200x200/4ecdc4/ffffff?text=Art1" },
-    { title: "Musique", desc: "Bande-son originale.", img: "https://via.placeholder.com/200x200/45b7d1/ffffff?text=Music" },
-    { title: "Projet Beta", desc: "Un jeu de plateforme.", img: "https://via.placeholder.com/200x200/96ceb4/ffffff?text=Beta" },
-    { title: "Artwork 2", desc: "Design de personnage.", img: "https://via.placeholder.com/200x200/ffeaa7/000000?text=Art2" },
-    { title: "Tutoriel", desc: "Apprendre le JavaScript.", img: "https://via.placeholder.com/200x200/dda0dd/ffffff?text=JS" },
-    { title: "Projet Gamma", desc: "Un jeu de puzzle.", img: "https://via.placeholder.com/200x200/98d8c8/ffffff?text=Gamma" },
-    { title: "Logo", desc: "Design de logo.", img: "https://via.placeholder.com/200x200/f7dc6f/000000?text=Logo" }
+    { title: "Logo", desc: "Design de logo.", img: "images/logo.svg" },
+    { title: "Logo", desc: "Design de logo.", img: "images/logo1.svg" },
+    { title: "Logo", desc: "Design de logo.", img: "images/logo(1).svg" }
 ];
 
 // Fonction pour créer un bloc
