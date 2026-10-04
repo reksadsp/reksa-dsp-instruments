@@ -2,7 +2,8 @@
 const blockContents = [
     { title: "Logo", desc: "Design de logo.", img: "images/logo.svg" },
     { title: "Logo", desc: "Design de logo.", img: "images/logo1.svg" },
-    { title: "Logo", desc: "Design de logo.", img: "images/logo(1).svg" }
+    { title: "Logo", desc: "Design de logo.", img: "images/logo(1).svg" },
+    { title: "École", desc: "Logo de l'école.", img: "images/school-logo.png" }
 ];
 
 // Fonction pour créer un bloc
